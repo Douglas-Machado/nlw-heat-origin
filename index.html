@@ -29,52 +29,59 @@
             alt="Foto pessoal"
           />
         </div>
-        <h1>Douglas Machado</h1>
+        <h1 id="userName">Douglas Machado</h1>
         <a href="#"> <img src="images/github.svg" alt="ícone github" /></a>
 
         <p class="user-description">
           An instructor focused on helping pople start programming for web
         </p>
 
-        <ul>
-          <li>
-            <a href="#">
-              <img
-                src="images/youtube.svg"
-                alt="ícone youtube"
-                target="_blank"
-              />
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a href="https://www.youtube.com/cyborgmc13" target="_blank">
+              <img src="images/youtube.svg" alt="ícone youtube" />
             </a>
           </li>
-          <li>
-            <a href="#">
-              <img
-                src="images/instagram.svg"
-                alt="ícone instagram"
-                target="_blank"
-              />
+          <li class="instagram">
+            <a
+              href="https://www.facebook.com/douglas.claudino.90/"
+              target="_blank"
+            >
+              <img src="images/instagram.svg" alt="ícone instagram" />
             </a>
           </li>
-          <li>
-            <a href="#">
-              <img
-                src="images/facebook.svg"
-                alt="ícone facebook"
-                target="_blank"
-              />
+          <li class="facebook">
+            <a href="https://www.instagram.com/un_lacky/" target="_blank">
+              <img src="images/facebook.svg" alt="ícone facebook" />
             </a>
           </li>
-          <li>
-            <a href="#">
-              <img
-                src="images/twitter.svg"
-                alt="ícone twitter"
-                target="_blank"
-              />
+          <li class="twitter">
+            <a href="https://twitter.com/cyborgtwt13" target="_blank">
+              <img src="images/twitter.svg" alt="ícone twitter" />
             </a>
           </li>
         </ul>
       </div>
     </main>
+
+    <script>
+      const LinksSocialMedia = {
+        github: 'Douglas-Machado',
+        youtube: 'cyborgmc13',
+        instagram: 'un_lacky',
+        facebook: 'douglasclaudino90',
+        twitter: 'cyborgtwt13'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+
+          li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+        }
+      }
+
+      changeSocialMediaLinks()
+    </script>
   </body>
 </html>
